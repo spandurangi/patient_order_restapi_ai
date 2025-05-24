@@ -1,11 +1,10 @@
-# FastAPI MVP with Together.ai
+# Patient-Order REST API using Together.ai
 
 ## Features
 - REST API for Orders
 - Upload PDFs to extract patient data (first name, last name, DOB)
 - Logs user activity
 - Uses Together.ai for LLM inference
-- Deployable on Render.com
 
 ## Setup
 
@@ -25,8 +24,3 @@ uvicorn main:app --reload
 ```
 
 4. Visit `http://localhost:8000/docs`
-
-## Deploy on Render
-- Push to GitHub
-- Create Web Service on Render using `render.yaml`
-- Add `TOGETHER_API_KEY` as environment variable in Render dashboard

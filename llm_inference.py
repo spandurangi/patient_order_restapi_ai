@@ -15,10 +15,12 @@ HEADERS = {
 
 def extract_patient_data(text: str) -> dict:
     prompt = (
-        "Extract the patient's First Name, Last Name, and Date of Birth from the following medical text. "
-        "Return it in JSON format as:\n"
-        "{ \"first_name\": ..., \"last_name\": ..., \"date_of_birth\": ... }\n\n"
-        f"Text:\n{text}\n\n"
+        "Extract the patient's First Name, Last Name, and Date of Birth from the following medical text.\n"
+        "Return only a valid JSON object and nothing else.\n"
+        "Do not include any explanation, summary, or extra text.\n\n"
+        "Format:\n"
+        "{ \"first_name\": \"...\", \"last_name\": \"...\", \"date_of_birth\": \"...\" }\n\n"
+        f"Text:\n{text}"
     )
 
     body = {
@@ -37,6 +39,7 @@ def extract_patient_data(text: str) -> dict:
         raise ValueError(f"Together.ai request failed: {response.status_code} {response.text}")
 
     content = response.json()["choices"][0]["message"]["content"]
+    print(content)
 
     try:
         import json

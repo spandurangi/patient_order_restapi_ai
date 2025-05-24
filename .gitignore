@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite database file
+*.db
+
+# Environment variables and Python environment files
+.env
+.venv/
+venv/
+
+# Log files
+*.log
+
+# Testing artifacts
+htmlcov/
+coverage.xml
+.pytest_cache/
+
+# Render build files
+build/
+dist/
+*.egg-info/
